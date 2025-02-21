@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Web App{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Twitter logo styling */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .twitter-logo {
+            width: 400px;  /* Adjusted for a perfect fit */
+            max-width: 450%;  /* Ensures responsiveness */
+            height: 400px;  /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Web App</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('results') }}">Results</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Perfectly Sized Twitter Logo -->
+    <div class="logo-container">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter Logo" class="twitter-logo">
+    </div>
+
+    <footer>
+        <p>&copy; 2025 My Web App</p>
+    </footer>
+
+</body>
+</html>
